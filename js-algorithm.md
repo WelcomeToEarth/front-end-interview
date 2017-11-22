@@ -138,25 +138,23 @@ function clone(obj) {
 ```
 * 快速排序
 ```
-function quickSort(arr) {
- 
-    if(arr.length<=1) {
-        return arr;
-    }
- 
-    let leftArr = [];
-    let rightArr = [];
-    let q = arr[0];
-    for(let i = 1,l=arr.length; i<l; i++) {
-        if(arr[i]>q) {
-            rightArr.push(arr[i]);
-        }else{
-            leftArr.push(arr[i]);
-        }
-    }
- 
-    return [].concat(quickSort(leftArr),[q],quickSort(rightArr));
-}
+var quicksort = function(arr){ 
+  if(arr.length <= 1){ 
+    return arr; 
+  } 
+  var pivotIndex = Math.floor(arr.length / 2); 
+  var pivot = arr.splice(pivotIndex,1)[0]; 
+  var left = []; 
+  var right = []; 
+  for(var i = 0;i < arr.length;i++){ 
+    if(arr[i] < pivot){ 
+      left.push(arr[i]); 
+    }else{ 
+      right.push(arr[i]); 
+    } 
+  } 
+  return quicksort(left).concat([pivot],quicksort(right)); 
+}; 
 ```
 * 冒泡排序
 ```
