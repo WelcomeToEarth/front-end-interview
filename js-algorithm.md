@@ -100,6 +100,8 @@ console.log(merge(left, right))
 ```
 * 实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）
 ```
+var newObject = JSON.parse(JSON.stringify(oldObject));
+
 function clone(obj) { 
     var o; 
     switch (typeof obj) { 
